@@ -1,0 +1,99 @@
+<!--
+<input type="text" [(ngModel)]="cId">-->
+<!--<input type="text" [(ngModel)]="cFirstname">
+<input type="text" [(ngModel)]="cLastname">
+<input type="text" [(ngModel)]="cEmail">
+<input type="text" [(ngModel)]="cAddress">
+<button (click)="addCheckout()">Add Checkout</button> -->
+
+<!--Checkout Info.-->
+<h1>Checkout Information</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Delivery Type</th>
+        <th scope="col">Delivery Price</th>
+        <!--<th scope="col">Products</th>
+        <th scope="col">Price</th>-->
+        <th scope="col">Order ID</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    
+    <tbody class="table-group-divider" *ngFor="let checkout of checkouts">
+      <tr>
+        <td scope="row">{{ checkout.ideCheckout }}</td>
+        <td scope="row">{{ checkout.firstname }}</td>
+        <td>{{ checkout.lastname }}</td>
+        <td>{{ checkout.email }}</td>
+        <td>{{ checkout.address }}</td>
+        <td>{{ checkout.deliveryType }}</td>
+        <td>{{ checkout.deliveryPrice}}</td>
+        <!-- <ng-container *ngFor="let item of items"> -->
+        <td>{{ checkout.orderId }}</td>
+        <!-- </ng-container> -->
+        <!--<td>{{ checkout.total | currency}}</td>-->
+        <td>
+          <div class="actions">
+            <button class="edit-btn" (click)="onSubmit(checkout.ideCheckout)" routerLink="/update"><span class="edit-btn" >Edit</span></button>
+            
+            <button class="delete-btn"  (click)="onDelete(checkout.ideCheckout)"><span class="delete-btn" >Delete</span></button>
+          </div>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+<!--(click)="onSubmit(checkout.ideCheckout)"-->
+
+
+  <!--Checkout Products.-->
+  <h1>Checkout Products</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Delivery Type</th> -->
+        <!-- <p>Random Order ID: {{ getRandomOrderId() }}</p> -->
+        <!-- <th scope="col">{{ getRandomOrderId() }}</th> -->
+        <th scope="col">ID</th>
+        <th scope="col">Products</th>
+        <th scope="col">Price</th>
+        <!-- <th scope="col">Total</th> -->
+        <th scope="col">Order ID</th>
+
+        <!-- <th scope="col">Actions</th> -->
+
+      </tr>
+    </thead>
+    
+    <tbody class="table-group-divider" >
+      <tr *ngFor="let item of itemCheckout">
+        <td scope="row">{{ item.ideItems }}</td>
+        <!-- <td scope="row">{{ checkout.firstname }}</td>
+        <td>{{ checkout.address }}</td> -->
+        <td>{{ item.checkoutItems }}</td>
+        <td>{{ item.checkoutPrice | currency:"PHP"}}</td>
+        <!-- <td>{{ checkouts.total | currency}}</td> -->
+        <td>{{ item.orderId }}</td>
+        <!-- <td>
+          <div class="actions">
+            <span class="edit-btn">Edit</span>
+            <span class="delete-btn">Delete</span>
+            <span class="update-btn">Update</span>
+          </div>
+        </td> -->
+      </tr>
+     
+    </tbody>
+  </table>

@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "type": "Same Day",
+      "price": 850
+    },
+    {
+      "id": 2,
+      "type": "2-Day",
+      "price": 550
+    },
+    {
+      "id": 3,
+      "type": "Regular",
+      "price": 59
+    }
+  ]
+  

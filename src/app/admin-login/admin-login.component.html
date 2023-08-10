@@ -1,0 +1,22 @@
+
+
+    <div class="login-box">
+      <h2>Shoppers Admin Login</h2>
+      <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+        <div class="user-box">
+          <input type="text" name="" required class="form-control" [formControl]="username">
+          <label for="username">Username</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="" required class="form-control" [formControl]="password">
+          <label for="password">Password</label>
+        </div>
+        <a routerLink="/admin" type="submit">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        Log in
+        </a>
+      </form>
+    </div>
